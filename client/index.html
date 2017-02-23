@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="playersApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Players and Teams</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="angular/angular.js">
+    </script>
+    <script src="angular-route/angular-route.js">
+    </script>
+    <script src="angular-messages/angular-messages.js">
+
+    </script>
+    <script>
+      var app = angular.module('playersApp', ['ngRoute', 'ngMessages']);
+    </script>
+    <script src="js/routes.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/factories.js"></script>
+  </head>
+  <body>
+    <div class="" ng-hide="true">
+      Hiding ---
+    </div>
+    <nav>
+      <ul class="nav nav-pills">
+        <li><a href="#!/players">Players</a></li>
+        <li><a href="#!/teams">Teams</a></li>
+        <li><a href="#!/associations">Associations</a></li>
+      </ul>
+    </nav>
+    <div class="" ng-view>
+
+    </div>
+  </body>
+</html>

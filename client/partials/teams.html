@@ -1,0 +1,23 @@
+<div class="col-md-offset-2 col-md-8">
+  <div class="well" data-ng-init="getTeams()">
+    <form class="" ng-submit="addTeam()">
+      <input type="text" name="teamName" ng-model="teamName" value="">
+      <input type="submit" class="btn btn-success" value="add team">
+    </form>
+  </div>
+  {{ errors }}
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="t in teams">
+        <td>{{ t.name }}</td>
+        <td><a class="btn btn-warning" ng-click="removeTeam(t._id)">Delete Team</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

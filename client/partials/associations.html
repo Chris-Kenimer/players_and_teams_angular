@@ -1,0 +1,32 @@
+<div class="col-md-offset-2 col-md-8">
+  <div class="well" data-ng-init="showAll()">
+    <form class="" ng-submit="addAssociation()" method="post">
+      <!-- <input type="text" name="playerName" ng-model="playerName" value=""> -->
+      <label for="">Player</label>
+      <select ng-model="player">
+        <option ng-repeat="p in players" value="{{ p._id }}">{{ p.name }}</option>
+      </select>
+      <label for="">Team</label>
+      <select ng-model="team">
+        <option ng-repeat="t in teams" value="{{ t._id }}">{{ t.name }}</option>
+      </select>
+      <input type="submit" class="btn btn-success" value="add associations">
+    </form>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Player</th>
+        <th>Team</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="a in associations">
+        <td>{{ a.name }}</td>
+        <td>{{ a._team.name }}</td>
+        <td><a class="btn btn-warning "href="#">Delete associations</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

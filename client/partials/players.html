@@ -1,0 +1,39 @@
+<style media="screen">
+  .messages {
+    transition: 1s linear all;
+  }
+  .messages.ng-active {
+    display: default;
+  }
+  .messages.ng-inactive {
+    display: none;
+  }
+</style>
+<div class="col-md-offset-2 col-md-8">
+  <div class="well" data-ng-init="getPlayers()">
+    <div class="alert alert-warning messages" ng-messages="playerForm.playerName.$error">
+      <p ng-message="minlength">The name must be at least 4 characters</p>
+      <p ng-message="required">The name is a required field</p>
+
+    </div>
+    <form name="playerForm" ng-submit="addPlayer()">
+      <input type="text" name="playerName" ng-model="playerName" value="" ng-minlength='4'>
+      <input type="submit" class="btn btn-success" value="add player">
+    </form>
+  </div>
+  {{ errors }}
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="p in players">
+        <td>{{ p.name }}</td>
+        <td><a class="btn btn-warning" ng-click="removePlayer(p._id)">Delete Player</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
